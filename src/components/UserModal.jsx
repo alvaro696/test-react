@@ -39,21 +39,17 @@ const UserModal = ({ visible, onCancel, onSuccess, userData = null }) => {
   const handleOk = async () => {
     try {
       const values = await form.validateFields();
-      if (userData) {
-        await api.put(`/api/users/${userData.id}`, values, {
-          headers: { Authorization: `Bearer ${token}` },
-        });
-        message.success("Usuario actualizado correctamente");
-      } else {
-        await api.post("/api/users", values, {
-          headers: { Authorization: `Bearer ${token}` },
-        });
-        message.success("Usuario creado correctamente");
-      }
+      console.log("Datos a enviar:", values); // Verificar en consola
+  
+      await api.post("/api/users", values, {
+        headers: { Authorization: `Bearer ${token}` },
+      });
+  
+      message.success("Usuario creado correctamente");
       onSuccess();
       onCancel();
     } catch (error) {
-      console.error(error);
+      console.error("Error al guardar usuario:", error.response?.data || error);
       message.error("Error al guardar el usuario");
     }
   };
@@ -99,12 +95,12 @@ const UserModal = ({ visible, onCancel, onSuccess, userData = null }) => {
         <Form.Item
           name="status"
           label="Estado"
-          initialValue="ACTIVE"
+          initialValue="1"
           rules={[{ required: true, message: "Por favor seleccione el estado" }]}
         >
           <Select placeholder="Seleccione el estado">
-            <Option value="ACTIVE">Activo</Option>
-            <Option value="INACTIVE">Inactivo</Option>
+            <Option value="1">Activo</Option>
+            <Option value="0">Inactivo</Option>
           </Select>
         </Form.Item>
       </Form>
