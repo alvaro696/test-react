@@ -1,4 +1,3 @@
-// src/pages/Transferencias.jsx
 import React, { useEffect, useState } from 'react';
 import { Table, Button, Modal, Form, InputNumber, Select, Spin, message } from 'antd';
 import api from '../api';
@@ -12,10 +11,9 @@ const Transferencias = () => {
   const [availableAccounts, setAvailableAccounts] = useState([]);
   const [loading, setLoading] = useState(false);
   const [modalVisible, setModalVisible] = useState(false);
-  const [selectedOperationType, setSelectedOperationType] = useState("1");
+  const [selectedOperationType, setSelectedOperationType] = useState("3");
   const [form] = Form.useForm();
 
-  // Función para obtener las cuentas del usuario
   const fetchUserAccounts = async () => {
     try {
       const response = await api.get('/api/cuentas', {
@@ -29,7 +27,6 @@ const Transferencias = () => {
     }
   };
 
-  // Función para obtener las transacciones
   const fetchTransactions = async () => {
     setLoading(true);
     try {
@@ -50,7 +47,6 @@ const Transferencias = () => {
     fetchTransactions();
   }, [token]);
 
-  // Handler para crear una nueva transacción
   const handleFormSubmit = async (values) => {
     try {
       console.log("Valores de la transacción:", values);
@@ -63,16 +59,23 @@ const Transferencias = () => {
       fetchTransactions();
     } catch (error) {
       console.error("Error al crear transacción:", error);
-      message.error("Error al realizar la transacción.");
+      if (error.response && error.response.data && error.response.data.message) {
+        message.error(error.response.data.message);
+      } else {
+        message.error("Error al realizar la transacción.");
+      }
     }
   };
 
-  // Columnas para la tabla de transacciones
   const columns = [
     {
       title: "ID",
       dataIndex: "id",
       key: "id",
+    }, {
+      title: "FEcha y Hora",
+      dataIndex: "createdAt",
+      key: "createdAt",
     },
     {
       title: "Tipo",
@@ -120,7 +123,7 @@ const Transferencias = () => {
 
   return (
     <div style={{ padding: 24 }}>
-      {/* Botón para abrir el modal de operación */}
+      
       <Button 
         type="primary" 
         onClick={() => setModalVisible(true)}
@@ -129,7 +132,6 @@ const Transferencias = () => {
         Realizar Operación
       </Button>
 
-      {/* Tabla de transacciones */}
       {loading ? (
         <Spin size="large" tip="Cargando transacciones..." />
       ) : (
@@ -140,8 +142,7 @@ const Transferencias = () => {
           pagination={{ pageSize: 10 }}
         />
       )}
-
-      {/* Modal para crear una transacción */}
+      
       <Modal
         visible={modalVisible}
         title="Realizar Operación"
@@ -153,14 +154,14 @@ const Transferencias = () => {
           form={form}
           layout="vertical"
           onFinish={handleFormSubmit}
-          initialValues={{ tipo: "1", monto: 0 }}
+          initialValues={{ tipo: "3", monto: 0 }}
           onValuesChange={(changedValues) => {
             if (changedValues.tipo) {
               setSelectedOperationType(changedValues.tipo);
             }
           }}
         >
-          {/* Selección de la cuenta de origen */}
+          
           <Form.Item
             name="origen"
             label="Cuenta Origen"
@@ -175,7 +176,6 @@ const Transferencias = () => {
             </Select>
           </Form.Item>
 
-          {/* Selección del tipo de operación */}
           <Form.Item
             name="tipo"
             label="Tipo de Operación"
@@ -188,7 +188,6 @@ const Transferencias = () => {
             </Select>
           </Form.Item>
 
-          {/* Ingreso del monto */}
           <Form.Item
             name="monto"
             label="Monto"
@@ -202,7 +201,6 @@ const Transferencias = () => {
             />
           </Form.Item>
 
-          {/* Campo de selección para la cuenta destino solo si es transferencia */}
           {selectedOperationType === "3" && (
             <Form.Item
               name="destino"
