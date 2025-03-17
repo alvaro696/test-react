@@ -7,6 +7,7 @@ import { Spin } from 'antd';
 
 //rutas de paginas y/o componenetes, se usa lazy para optimizar el cargado
 const Login = lazy(() => import('./pages/Login'));
+const RegistroCliente = lazy(() => import('./pages/RegistroCliente'));
 const Inicio = lazy(() => import('./pages/Inicio'));
 const Perfil = lazy(() => import('./pages/Perfil'));
 const Dashboard = lazy(() => import('./pages/Dashboard'));
@@ -14,11 +15,6 @@ const Unauthorized = lazy(() => import('./pages/Unauthorized'));
 const AdminPanel = lazy(() => import('./pages/AdminPanel'));
 const RoleManagement = lazy(() => import('./pages/RoleManagement'));
 const PermissionManagement = lazy(() => import('./pages/PermissionManagement'));
-const Productos = lazy(() => import('./pages/Productos'));
-const Medios = lazy(() => import('./pages/Medios'));
-const Distritos = lazy(() => import('./pages/organigrama/Distritos'));
-const Gerencias = lazy(() => import('./pages/organigrama/Gerencias'));
-const Areas = lazy(() => import('./pages/organigrama/Areas'));
 
 const Cuentas = lazy(() => import('./pages/Cuentas'));
 
@@ -43,6 +39,7 @@ function App() {
           >
             <Routes>
               <Route path="/" element={<Login />} />
+              <Route path="/registro" element={<RegistroCliente />} />
               <Route element={<ProtectedRoute />}>
                 <Route path="/dashboard" element={<Dashboard />}>
                   <Route index element={<Inicio />} />
