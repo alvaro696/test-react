@@ -44,7 +44,7 @@ export const AuthProvider = ({ children }) => {
   const login = async (username, password) => {
     try {
       console.log("Intentando iniciar sesión con:", username, password);
-      const response = await api.post("/api/auth/login", { username, password });
+      const response = await api.post("/api/login", { username, password });
       const { token: jwtToken, user: userData } = response.data;
 
       setUser(userData);

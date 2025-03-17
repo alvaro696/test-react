@@ -1,3 +1,4 @@
+// src/pages/AdminPanel.jsx
 import React, { useEffect, useState } from "react";
 import { Table, Input, Space, message, Button, Modal } from "antd";
 import { UserAddOutlined, EditOutlined, DeleteOutlined } from "@ant-design/icons";
@@ -26,6 +27,7 @@ const AdminPanel = () => {
   const canUpdate = user?.permissions?.includes("update_user");
   const canDelete = user?.permissions?.includes("delete_user");
 
+
   const fetchData = async (params = {}) => {
     setLoading(true);
     try {
@@ -44,12 +46,15 @@ const AdminPanel = () => {
       });
     } catch (error) {
       message.error("Error al obtener los datos de los usuarios");
+      console.error("Error fetchData:", error);
     }
     setLoading(false);
   };
+  
 
   useEffect(() => {
     fetchData({ current: 1, pageSize: pagination.pageSize });
+    // eslint-disable-next-line react-hooks/exhaustive-deps
   }, [searchText]);
 
   const handleTableChange = (pag, filters, sorter) => {
@@ -114,7 +119,7 @@ const AdminPanel = () => {
       dataIndex: "status",
       key: "status",
       render: (status) =>
-        status.toUpperCase() === "ACTIVE" ? "Activo" : "Inactivo",
+        status === "1" ? "Activo" : "Inactivo",
     },
     {
       title: "Acciones",

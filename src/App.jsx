@@ -20,7 +20,9 @@ const Distritos = lazy(() => import('./pages/organigrama/Distritos'));
 const Gerencias = lazy(() => import('./pages/organigrama/Gerencias'));
 const Areas = lazy(() => import('./pages/organigrama/Areas'));
 
+const Cuentas = lazy(() => import('./pages/Cuentas'));
 
+import Transferencias from './pages/Transferencias';
 
 function App() {
   return (
@@ -45,11 +47,11 @@ function App() {
                 <Route path="/dashboard" element={<Dashboard />}>
                   <Route index element={<Inicio />} />
                   <Route path="perfil" element={<Perfil />} />
-                  <Route path="productos" element={<Productos />} />
-                  <Route path="medios" element={<Medios />} />
-                  <Route path="distritos" element={<Distritos />} />
+                  <Route path="cuentas" element={<Cuentas />} />
+                  <Route path="transferencias" element={<Transferencias />} />
+                  {/* <Route path="distritos" element={<Distritos />} />
                   <Route path="gerencias" element={<Gerencias />} />
-                  <Route path="areas" element={<Areas />} />
+                  <Route path="areas" element={<Areas />} /> */}
                   <Route path="usuarios">
                     <Route path="user" element={<AdminPanel />} />
                     <Route path="roles" element={<RoleManagement />} />

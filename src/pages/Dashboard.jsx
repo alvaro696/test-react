@@ -64,22 +64,16 @@ const Dashboard = () => {
       <Menu.Item key="1" icon={<HomeOutlined />}>
         <Link to="/dashboard">Inicio</Link>
       </Menu.Item>
-      <Menu.Item key="2" icon={<UserOutlined />}>
+      {/* <Menu.Item key="2" icon={<UserOutlined />}>
         <Link to="/dashboard/perfil">Perfil</Link>
-      </Menu.Item>
+      </Menu.Item> */}
       <Menu.Item key="3" icon={<UserOutlined />}>
-        <Link to="/dashboard/productos">productos</Link>
+        <Link to="/dashboard/cuentas">Cuentas</Link>
       </Menu.Item>
       <Menu.Item key="4" icon={<UserOutlined />}>
-        <Link to="/dashboard/medios">Medios</Link>
+        <Link to="/dashboard/transferencias">Transferencias</Link>
       </Menu.Item>
-      <Menu.Item key="5" icon={<UserOutlined />}>
-        <Link to="/dashboard/gerencias">Gerencia</Link>
-      </Menu.Item>
-      <Menu.Item key="6" icon={<UserOutlined />}>
-        <Link to="/dashboard/areas">Area</Link>
-      </Menu.Item>
-      <Menu.Item key="7" icon={<UserOutlined />}>
+      {/* <Menu.Item key="7" icon={<UserOutlined />}>
         <Link to="/dashboard/distritos">Distritos</Link>
       </Menu.Item>
       {hasPermission("view_panel") && (
@@ -94,7 +88,7 @@ const Dashboard = () => {
             <Link to="/dashboard/usuarios/permisos">Permisos</Link>
           </Menu.Item>
         </Menu.SubMenu>
-      )}
+      )} */}
     </>
   );
 
