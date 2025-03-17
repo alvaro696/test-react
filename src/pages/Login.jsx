@@ -129,7 +129,7 @@ const Login = () => {
             style={{ display: "inline-block", whiteSpace: "nowrap" }} 
           >
             <Title level={5} style={{ margin: 0 }}>
-              La Paz - Cochabamba - Santa Cruz - Tarija - Sucre - Potosi - Oruro - Bolivia UNIBIENES S.A. Seguros y Reaseguros Patrimoniales Fecha: 2025-03-10 Dólar Venta: 6.96 BOB Dólar Compra: 6.86 BOB Euro Venta: 7.39782 BOB UFV: 2.48063 BOB Lineas Gratuitas 800 17 1010 - 800 10 3006 Siniestros ocurridos La Paz, Oruro y Potosi 77227175 Cochabamba, Chuquisaca y Tarija 73098857 Santa Cruz, Beni y Pando 76771855
+              La Paz - Cochabamba - Santa Cruz
             </Title>
           </motion.div>
         </Col>
@@ -240,8 +240,8 @@ const Login = () => {
                 { key: "glosario", icon: <FileProtectOutlined />, label: "Glosario" },
                 { key: "normativa", icon: <FileProtectOutlined />, label: "Normativa Interna" },
                 { key: "ranking", icon: <BarChartOutlined />, label: "Ranking Mensual" },
-                { key: "memorias", icon: <FileDoneOutlined />, label: "Memorias Unbienes" },
-                { key: "pagina", icon: <GlobalOutlined />, label: "Página Web Unbienes" },
+                { key: "memorias", icon: <FileDoneOutlined />, label: "Memorias" },
+                { key: "pagina", icon: <GlobalOutlined />, label: "Página" },
               ].map((item) => (
                 <Menu.Item key={item.key} onClick={() => handleMenuClick(item.key)} style={{ marginBottom: "40px" }}>
                   <motion.div
@@ -269,7 +269,7 @@ const Login = () => {
         }}
       >
         <Col>
-          <Text type="secondary">© 2025 Intranet Unbienes. Central Telefónica: 2121920 - 2150031 - 2151537 - 2121920</Text>
+          <Text type="secondary">© 2025</Text>
         </Col>
       </Row>
     </>

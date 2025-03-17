@@ -184,7 +184,7 @@ const Dashboard = () => {
               padding: '10px 0'
             }}
           >
-            © 2025 Jefatura Nacional de Sistemas, Infraestructura y Desarrollo.
+            © 2025
           </Footer>
         </Layout>
       </Layout>
