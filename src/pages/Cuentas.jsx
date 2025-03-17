@@ -61,8 +61,6 @@ const Cuentas = () => {
       columns={cuentasModel}
       fetchData={fetchCuenta}
       onCreate={crearCuenta}
-      onUpdate={actualizarCuenta}
-      onDelete={eliminarCuenta}
     />
   );
 };

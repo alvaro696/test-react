@@ -75,7 +75,7 @@ const GenericCrud = ({ title, columns, fetchData, onCreate, onUpdate, onDelete }
         key: "actions",
         render: (_, record) => (
             <>
-                <Button
+                {/* <Button
                     onClick={() => handleEdit(record)}
                     type="link"
                     icon={<EditOutlined style={editIconStyle} />}
@@ -92,12 +92,12 @@ const GenericCrud = ({ title, columns, fetchData, onCreate, onUpdate, onDelete }
                         icon={<DeleteOutlined style={deleteIconStyle} />}
                         title="Eliminar"
                     />
-                </Popconfirm>
+                </Popconfirm> */}
             </>
         ),
     };
 
-    const extendedColumns = [...columns, operationColumn];
+    const extendedColumns = [...columns];
 
     const renderFormItem = (col) => {
         switch (col.formType) {
