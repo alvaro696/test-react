@@ -75,7 +75,7 @@ const Dashboard = () => {
       </Menu.Item>
       {/* <Menu.Item key="7" icon={<UserOutlined />}>
         <Link to="/dashboard/distritos">Distritos</Link>
-      </Menu.Item>
+      </Menu.Item> */}
       {hasPermission("view_panel") && (
         <Menu.SubMenu key="sub1" icon={<DashboardOutlined />} title="Usuarios">
           <Menu.Item key="6" icon={<UsergroupDeleteOutlined />}>
@@ -88,7 +88,7 @@ const Dashboard = () => {
             <Link to="/dashboard/usuarios/permisos">Permisos</Link>
           </Menu.Item>
         </Menu.SubMenu>
-      )} */}
+      )}
     </>
   );
 
