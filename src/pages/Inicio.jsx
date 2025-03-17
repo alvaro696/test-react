@@ -1,51 +1,65 @@
 import React, { useEffect, useState } from 'react';
-import { Card, Row, Col, Statistic, Spin, message } from 'antd';
+import { Card, Statistic, Spin, message, List } from 'antd';
+import api from '../api';
+import { useAuth } from "../context/AuthContext";
 
 const Inicio = () => {
+  const { token } = useAuth();
   const [loading, setLoading] = useState(true);
-  const [branches, setBranches] = useState([]);
+  const [saldoTotal, setSaldoTotal] = useState(0);
+  const [cuentas, setCuentas] = useState([]);
 
   useEffect(() => {
-    const fetchBranchesData = async () => {
+    const fetchCuentas = async () => {
       try {
         setLoading(true);
-        await new Promise((resolve) => setTimeout(resolve, 1000));
-        const data = [
-          { id: 1, name: 'Sucursal Norte', userCount: 120 },
-          { id: 2, name: 'Sucursal Sur', userCount: 85 },
-          { id: 3, name: 'Sucursal Este', userCount: 60 },
-          { id: 4, name: 'Sucursal Oeste', userCount: 95 },
-        ];
-        setBranches(data);
+        const response = await api.get('/api/cuentas', {
+          headers: { Authorization: `Bearer ${token}` },
+        });
+        const fetchedCuentas = response.data.data || [];
+        setCuentas(fetchedCuentas);
+
+        const total = fetchedCuentas.reduce((acc, cuenta) => {
+          return acc + parseFloat(cuenta.saldo);
+        }, 0);
+        setSaldoTotal(total);
       } catch (error) {
-        message.error('Error al cargar la información de las sucursales.');
+        console.error("Error al cargar las cuentas:", error);
+        message.error('Error al cargar el saldo de las cuentas.');
       } finally {
         setLoading(false);
       }
     };
 
-    fetchBranchesData();
-  }, []);
+    fetchCuentas();
+  }, [token]);
 
   if (loading) {
     return (
       <div style={{ textAlign: 'center', paddingTop: '20vh' }}>
-        <Spin size="large" tip="Cargando sucursales..." />
+        <Spin size="large" tip="Cargando saldo..." />
       </div>
     );
   }
 
   return (
     <div style={{ padding: 24 }}>
-      <Row gutter={[16, 16]}>
-        {branches.map((branch) => (
-          <Col key={branch.id} xs={24} sm={12} md={8} lg={6}>
-            <Card bordered>
-              <Statistic title={branch.name} value={branch.userCount} />
-            </Card>
-          </Col>
-        ))}
-      </Row>
+      <Card bordered style={{ marginBottom: 24, textAlign: 'center' }}>
+        <Statistic title="Saldo Total" value={saldoTotal} precision={2} prefix="$" />
+      </Card>
+      <List
+        header={<div>Detalle de Cuentas</div>}
+        itemLayout="horizontal"
+        dataSource={cuentas}
+        renderItem={cuenta => (
+          <List.Item>
+            <List.Item.Meta
+              title={cuenta.nombre ? `Cuenta: ${cuenta.nombre}` : `Cuenta #${cuenta.id}`}
+              description={`Saldo: $${parseFloat(cuenta.saldo).toFixed(2)}`}
+            />
+          </List.Item>
+        )}
+      />
     </div>
   );
 };
