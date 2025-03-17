@@ -1,0 +1,32 @@
+.react-calendar {
+    width: 90%;
+    background-color: #92c9eb;
+    border: 1px solid #ddd;
+    font-family: 'Arial', sans-serif;
+    line-height: 2.125em;
+    margin: 5vh auto; 
+  }
+  
+  .react-calendar__navigation {
+    background-color: #0d59f0;
+    color: #fff;
+  }
+  
+  .react-calendar__tile {
+    max-width: initial;
+    background: rgba(240, 240, 240, 0.897);
+    border: none;
+    color: #E47E3A;
+    transition: background 0.3s ease-in-out;
+  }
+  
+  .react-calendar__tile:hover {
+    background: #445dec;
+    color: #fff;
+  }
+  
+  .react-calendar__tile--active {
+    background: #49669e;
+    color: #fff;
+  }
+  

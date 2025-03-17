@@ -1,0 +1,15 @@
+[
+    {
+      "gerencia": "Gerencia de Recursos Humanos",
+      "area": "Desarrollo Organizacional",
+      "titulo": "Manual de Puestos y Funciones 2025",
+      "verManual": "/documents/manual_puestos_funciones_2025.pdf"
+    },
+    {
+      "gerencia": "Gerencia de Tecnología",
+      "area": "Infraestructura TI",
+      "titulo": "Manual de Cargos y Responsabilidades TI",
+      "verManual": "/documents/manual_cargos_ti.pdf"
+    }
+  ]
+  

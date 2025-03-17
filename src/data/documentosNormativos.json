@@ -1,0 +1,16 @@
+[
+  {
+    "gerencia": "Gerencia General",
+    "area": "Jurídico",
+    "nombreArchivo": "Reglamento Interno",
+    "vistaDocumento": "/documents/reglamento_interno.pdf",
+    "vistaFormulario": "/forms/reglamento_interno_form.pdf"
+  },
+  {
+    "gerencia": "Gerencia de Finanzas",
+    "area": "Contabilidad",
+    "nombreArchivo": "Normas Contables 2025",
+    "vistaDocumento": "/documents/normas_contables_2025.pdf",
+    "vistaFormulario": "/forms/normas_contables_form.pdf"
+  }
+]

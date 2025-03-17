@@ -1,0 +1,26 @@
+[
+    {
+      "id": 1,
+      "letra": "A",
+      "palabra": "API",
+      "definicion": "Interfaz de Programación de Aplicaciones, permite la comunicación entre sistemas."
+    },
+    {
+      "id": 2,
+      "letra": "B",
+      "palabra": "Backend",
+      "definicion": "Parte del software que se ejecuta en el servidor y gestiona la lógica de negocio."
+    },
+    {
+      "id": 3,
+      "letra": "C",
+      "palabra": "Componente",
+      "definicion": "Unidad modular y reutilizable en el desarrollo de interfaces de usuario."
+    },
+    {
+      "id": 4,
+      "letra": "D",
+      "palabra": "DOM",
+      "definicion": "Modelo de Objetos del Documento, representa la estructura de un documento HTML."
+    }
+  ]

@@ -1,0 +1,60 @@
+.cumple-container {
+  text-align: center;
+  border-radius: 5vh;
+  padding: 1vh;
+  height: 50vh;
+  margin: 1vh auto;
+  background: url("../../public/plantilla.png") no-repeat;
+  background-size: 100% auto;
+  background-attachment:local;
+}
+@media (max-width: 768px) {
+  .cumple-container {
+    background-size: contain; 
+    background-attachment: scroll; 
+    padding: 20px;
+    max-width: 95%;
+  }
+}
+
+@media (max-width: 480px) {
+  .cumple-container {
+    background-size: 100% auto;
+    padding: 15px;
+    max-width: 100%;
+  }
+}
+
+.cumple-carousel {
+  width: 100%;
+  max-width: 80%;
+  margin: 0 auto;
+}
+
+.cumple-slide {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.cumple-img {
+  width: 90%;
+  height: 25vh;
+  border-radius: 10%;
+  object-fit: cover;
+  border: 0.1vh solid #0026ff;
+}
+
+.cumple-nombre {
+  margin-top: 10px;
+  font-size: 22px;
+  font-weight: bold;
+  background-image: linear-gradient(to left, #2e43fa79, #f36161ad, #ffd166);
+  border-radius: 5vh;
+  color: white;
+}
+
+.no-cumple {
+  font-size: 16px;
+  color: #707070;
+}

@@ -1,0 +1,15 @@
+[
+    {
+      "gerencia": "Gerencia General",
+      "area": "Dirección",
+      "nombreArchivo": "Organigrama Institucional",
+      "vistaDocumento": "/documents/organigrama_institucional.pdf"
+    },
+    {
+      "gerencia": "Gerencia de Recursos Humanos",
+      "area": "RRHH",
+      "nombreArchivo": "Estructura Organizativa",
+      "vistaDocumento": "/documents/estructura_organizativa.pdf"
+    }
+  ]
+  

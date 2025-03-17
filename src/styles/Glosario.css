@@ -1,0 +1,13 @@
+.glosario-container {
+    padding: 20px;
+  }
+  
+  .glosario-container h1 {
+    margin-bottom: 20px;
+    font-size: 24px;
+    color: #333;
+  }
+  
+  .table-responsive {
+    overflow-x: auto;
+  }

@@ -1,0 +1,60 @@
+.ranking-mensual-container {
+    padding: 20px;
+    background-color: #f0f2f5;
+    text-align: center;
+  }
+  
+  .ranking-mensual-container h1 {
+    font-size: 2rem;
+    color: #0F426B;
+    margin-bottom: 20px;
+  }
+  
+  .image-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-top: 20px;
+  }
+  
+  .image-card {
+    width: 100%;
+    max-width: 400px; 
+    border-radius: 8px;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+  }
+  
+  .image-card img {
+    width: 100%;
+    height: auto;
+    border-top-left-radius: 8px;
+    border-top-right-radius: 8px;
+  }
+  
+  .ant-card-meta-title {
+    font-size: 1.5rem;
+    color: #0F426B;
+  }
+  
+  .ant-card-meta-description {
+    font-size: 1rem;
+    color: #333;
+  }
+  
+  @media (max-width: 768px) {
+    .ranking-mensual-container h1 {
+      font-size: 1.5rem;
+    }
+  
+    .image-card {
+      max-width: 300px;
+    }
+  
+    .ant-card-meta-title {
+      font-size: 1.2rem;
+    }
+  
+    .ant-card-meta-description {
+      font-size: 0.9rem;
+    }
+  }

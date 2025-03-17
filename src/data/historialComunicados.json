@@ -1,0 +1,21 @@
+[
+    {
+      "gerencia": "Gerencia A",
+      "area": "Área 1",
+      "nombreComunicado": "Actualización de Políticas",
+      "fechaPublicacion": "2025-03-01",
+      "fechaLimite": "2025-03-15",
+      "visualizar": "/images/comunicado1.jpg",
+      "formulario": "/formularios/formulario1.pdf"
+    },
+    {
+      "gerencia": "Gerencia B",
+      "area": "Área 2",
+      "nombreComunicado": "Nuevo Reglamento Interno",
+      "fechaPublicacion": "2025-03-05",
+      "fechaLimite": "2025-03-20",
+      "visualizar": "/images/comunicado2.jpg",
+      "formulario": "/formularios/formulario2.docx"
+    }
+  ]
+  

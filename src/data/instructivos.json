@@ -1,0 +1,26 @@
+[
+  {
+    "id": 1,
+    "gerencia": "Gerencia de Operaciones",
+    "area": "Logística",
+    "nombreArchivo": "Instructivo_Logistica_v1.pdf",
+    "enlaceVista": "/vista/instructivo/1",
+    "enlaceDescarga": "/descarga/instructivo/1"
+  },
+  {
+    "id": 2,
+    "gerencia": "Gerencia de Tecnología",
+    "area": "Desarrollo",
+    "nombreArchivo": "Instructivo_Desarrollo_v2.pdf",
+    "enlaceVista": "/vista/instructivo/2",
+    "enlaceDescarga": "/descarga/instructivo/2"
+  },
+  {
+    "id": 3,
+    "gerencia": "Gerencia de Recursos Humanos",
+    "area": "Capacitación",
+    "nombreArchivo": "Instructivo_Capacitacion_v3.pdf",
+    "enlaceVista": "/vista/instructivo/3",
+    "enlaceDescarga": "/descarga/instructivo/3"
+  }
+]

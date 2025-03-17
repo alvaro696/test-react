@@ -1,0 +1,17 @@
+[
+    {
+      "gerencia": "Gerencia de Planificación",
+      "area": "Estrategia",
+      "nombreArchivo": "Plan Estratégico Institucional (PEI) 2025-2030",
+      "vistaDocumento": "/documents/pei_2025_2030.pdf",
+      "formulario": "/forms/pei_formulario.pdf"
+    },
+    {
+      "gerencia": "Gerencia de Operaciones",
+      "area": "Gestión de Procesos",
+      "nombreArchivo": "Programa Operativo Anual (POA) 2025",
+      "vistaDocumento": "/documents/poa_2025.pdf",
+      "formulario": "/forms/poa_formulario.pdf"
+    }
+  ]
+  

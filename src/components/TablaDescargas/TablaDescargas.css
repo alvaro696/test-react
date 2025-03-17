@@ -1,0 +1,27 @@
+.tabla-descargas-container {
+    padding: 20px;
+    margin: auto;
+    max-width: 90%;
+    background: #f8f9fa;
+    border-radius: 10px;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+  }
+  .table-responsive {
+    overflow-x: auto;
+  }
+  
+  .input-busqueda {
+    width: 40%;
+    margin-bottom: 20px;
+  }
+  
+  .icono-descarga {
+    font-size: 18px;
+    color: #1890ff;
+    transition: color 0.3s ease-in-out;
+  }
+  
+  .icono-descarga:hover {
+    color: #ff4d4f;
+  }
+  
